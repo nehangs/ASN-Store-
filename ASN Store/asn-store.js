@@ -19,7 +19,7 @@
   };
 
   // --- Utils ---
-  function formatPrice(p) { return ₹${p.toLocaleString()}; }
+  function formatPrice(p) { return '₹' + Number(p).toLocaleString(); }
 
   function saveCart() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state.cart));
@@ -37,7 +37,7 @@
   }
 
   function cartItemCount() {
-    return Object.values(state.cart).reduce((s, v) => s + v.qty, 0);
+    return Object.values(state.cart).reduce((s, v) => s + (v?.qty || 0), 0);
   }
 
   // --- Rendering ---
@@ -238,7 +238,7 @@
     const categories = Array.from(new Set(state.products.map(p => p.category)));
     const catSelect = document.getElementById('category-select');
     if (catSelect) {
-      catSelect.innerHTML = '<option value="">All categories</option>' + categories.map(c=><option value="${escapeHtml(c)}">${escapeHtml(c)}</option>).join('');
+      catSelect.innerHTML = '<option value="">All categories</option>' + categories.map(c => ` <option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
       catSelect.addEventListener('change', applyFilters);
     }
 

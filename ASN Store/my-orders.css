@@ -1,0 +1,70 @@
+/* Status Badges */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-green {
+    background-color: #e5f9e7;
+    color: #2ecc71;
+}
+
+.status-red {
+    background-color: #fce8e8;
+    color: #e74c3c;
+}
+
+.status-orange {
+    background-color: #fff6e5;
+    color: #f39c12;
+}
+
+/* Small Button for View */
+.btn-sm {
+    background: #ff523b;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s;
+}
+
+.btn-sm:hover {
+    background: #563434;
+}
+
+/* Responsive Table Tweak for Mobile */
+@media only screen and (max-width: 600px) {
+    .orders-table thead {
+        display: none; /* Hide headers on small screens */
+    }
+
+    .orders-table tr {
+        display: block;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+
+    .orders-table td {
+        display: block;
+        text-align: right;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .orders-table td:last-child {
+        border-bottom: none;
+    }
+
+    .orders-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: #555;
+    }
+}

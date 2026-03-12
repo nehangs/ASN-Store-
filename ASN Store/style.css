@@ -18,7 +18,7 @@ nav{
 nav ul{
     display: inline-block;
     list-style-type: none;    
-}
+}                                     
 nav ul li{
     display: inline-block;
     margin-right: 20px;
@@ -58,7 +58,7 @@ p{
 }
 .btn{
     display: inline-block;
-    background: #ff523b;
+    background: #000000;
     color: #fff;
     padding: 8px 30px;
     margin: 30px 0;
@@ -66,7 +66,7 @@ p{
     transition: background 0.5s;
 }
 .btn:hover{
-    background: #563434;
+    background: #ff0000;
 }
 .header{
     background: radial-gradient(#fff,#ffd6d6);
@@ -481,7 +481,7 @@ form a{
     background: #ff523b;
     height: 3px;
     margin-top: 8px;
-    transform: translateX(100px);
+    transform: translateX(5px);
     transition: transform 1s;
 }
 
@@ -506,4 +506,87 @@ form a{
     .cart-infop{
         display: none;
     }
+    /* Add this to the bottom of style.css */
+
+/* Container to hold the buttons side-by-side */
+.grid-btn-container {
+    display: flex;
+    justify-content: space-between; /* Spreads them out */
+    gap: 5px;                       /* Small space between buttons */
+    margin-top: 10px;
+}
+
+/* Style for the buttons inside the grid */
+.grid-btn-container .btn {
+    flex: 1;                /* Makes both buttons equal width */
+    margin: 0;              /* Removes the large default margins */
+    padding: 8px 5px;       /* Smaller padding to fit text */
+    font-size: 12px;        /* Smaller text size */
+    border-radius: 5px;     /* Optional: Less rounded corners looks better in grid */
+    white-space: nowrap;    /* Prevents text from breaking lines */
+    text-align: center;
+}
+}
+
+/* ---- UX polish: toast, modal, disabled buttons, animations ---- */
+.toast {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 260ms ease, transform 260ms ease;
+    pointer-events: none;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.modal-confirm {
+    position: fixed;
+    left: 0; right: 0; top: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    z-index: 10000;
+}
+.modal-confirm .modal-content {
+    background: #fff;
+    padding: 18px 20px;
+    border-radius: 8px;
+    max-width: 360px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    text-align: left;
+}
+.modal-confirm .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 12px;
+}
+.modal-confirm .btn { padding: 8px 14px; }
+.modal-confirm .btn.secondary { background: #f1f1f1; color: #333; }
+
+.btn[disabled], .btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: saturate(0.6);
+}
+
+.cart-bump {
+    animation: cart-bump 360ms ease;
+}
+@keyframes cart-bump {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.14); }
+    100% { transform: scale(1); }
 }

@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Redstore | Ecommerce Website design</title>
         <link rel="stylesheet" href="style.css">
+        <script src="asn-store.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
         
@@ -17,18 +18,22 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                   <a href="index.html"><img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\ASN LOGO.png" width="125px"></a>
+                    <a href="ASN Store.html"><img src="images/ASN LOGO.png" width="125px"></a>
                 </div>
-                <nav>
-                    <ul id="MenuItems">
-                        <li><a href="ASN Store.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="account.html">Account</a></li>
-                    </ul>
-                </nav>
-               <a href="cart.html"><img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\cart.png" width="30px" height="30px"></a>
-                <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\menu.png" class="menu-icon" onclick="menutoggle()">
+               <nav>
+    <ul id="MenuItems">
+        <li><a href="ASN Store.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="my-orders.html">My Orders</a></li> <!-- NEW LINE -->
+        <li><a href="account.html">Account</a></li>
+    </ul>
+</nav>
+               <a href="cart.html" style="position:relative; display:inline-block;">
+                   <img src="images/cart.png" width="30px" height="30px">
+                   <span id="cart-count" style="position:absolute; top:-6px; right:-8px; background:#ff3b3b; color:#fff; font-size:12px; padding:2px 6px; border-radius:12px;">0</span>
+               </a>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
             <div class="row">
                 <div class="col-2">
@@ -37,7 +42,7 @@
                     <a href="ASN Store.html" class="btn">Explore Now &#8594;</a>
                 </div>
                     <div class="col-2">
-                        <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\image1.png">
+                        <img src="images/image1.png">
                     </div>
             </div>
         </div>
@@ -65,7 +70,21 @@
                 <h4>Diploma-CSE-Sec C</h4>
                 <h4>Mobile No : +919023037730</h4>
             </div>
-    </div>
-</div>
-
-</html>
+        </div>
+        </div>
+        <!-- JS: menu toggle + cart -->
+        <script>
+            var MenuItems = document.getElementById("MenuItems");
+            if (MenuItems) MenuItems.style.maxHeight = "0px";
+            function menutoggle(){
+                if (!MenuItems) return;
+                if (MenuItems.style.maxHeight == "0px") {
+                    MenuItems.style.maxHeight = "200px";
+                } else {
+                    MenuItems.style.maxHeight = "0px";
+                }
+            }
+        </script>
+        <script src="cart.js"></script>
+    </body>
+    </html>

@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>All Products - Redstore</title>
         <link rel="stylesheet" href="style.css">
+        <script src="asn-store.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
         
@@ -12,18 +13,22 @@
     <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\ASN LOGO.png" width="125px">
+                    <a href="ASN Store.html"><img src="images/ASN LOGO.png" width="125px"></a>
                 </div>
                 <nav>
                     <ul id="MenuItems">
                         <li><a href="ASN Store.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="about.html">About</a></li>
+                        <li><a href="my-orders.html">My Orders</a></li>
                         <li><a href="account.html">Account</a></li>
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\cart.png" width="30px" height="30px"></a>
-                <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\menu.png" class="menu-icon" onclick="menutoggle()">
+                <a href="cart.html" style="position:relative; display:inline-block;">
+                    <img src="images/cart.png" width="30px" height="30px">
+                    <span id="cart-count" style="position:absolute; top:-6px; right:-8px; background:#ff3b3b; color:#fff; font-size:12px; padding:2px 6px; border-radius:12px;">0</span>
+                </a>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
 
@@ -40,68 +45,139 @@
         </div>
 
 
-        <div class="row">
-            <div class="col-4">
-                    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-1.jpg">
-                    <h4>Puma Red Printed T-Shirt</h4>
-                    <p>₹650.00</p>
-            </div>
-            <div class="col-4">
-                <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-2.jpg">
-                <h4>HRX Black Color Shoes</h4>
-                <p>₹1100.00</p>
-        </div>
-        <div class="col-4">
-            <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-3.jpg">
+       <div class="row">
+                <div class="col-4" data-id="p1">
+                            <a href=""><img src="images/product-1.jpg"></a>
+                            <a href=""><h4>Puma Red Printed T-Shirt</h4></a>
+                            <a>Available Quantity: 250</a>
+                            <p>₹650.00</p>
+                             <div class="grid-btn-container">
+                
+                <a href="#" class="btn add-to-cart">Add To Cart</a>
+            </div> 
+                        </div>
+                <div class="col-4" data-id="p2">
+                    <img src="images/product-2.jpg">
+                    <h4>HRX Black Color Shoes</h4>
+                    <p>Available Quantity: 250</p>
+                    <p>₹1100.00</p>
+                     <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+                </div>
+
+        <div class="col-4" data-id="p4">
+            <img src="images/product-3.jpg">
             <h4> Puma Gray Color TrackPant</h4>
+             <a>Available Quantity: 250</a>
             <p>₹700.00</p>
+             <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+            
     </div>
-    <div class="col-4">
-        <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-4.jpg">
+    <div class="col-4" data-id="p5">
+        <img src="images/product-4.jpg">
         <h4> Puma Blue Color T-Shirt</h4>
+         <a>Available Quantity: 250</a>
         <p>₹450.00</p>
+         <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+        
 </div>
     </div>
     <div class="row">
-        <div class="col-4">
-                <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-5.jpg">
-                <h4>HRX Gray Shoes</h4>
-                <p>₹900.00</p>
-        </div>
-        <div class="col-4">
-            <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-6.jpg">
+        <div class="col-4" data-id="p6">
+                    <img src="images/product-5.jpg">
+                    <h4>HRX Gray Shoes</h4>
+                     <a>Available Quantity: 250</a>
+                    <p>₹900.00</p>
+                     <div class="grid-btn-container">
+            
+            <a href="#" class="btn add-to-cart">Add To Cart</a>
+        </div> 
+               
+            </div>
+        <div class="col-4" data-id="p7">
+            <img src="images/product-6.jpg">
             <h4>Puma Black Color T-Shirt</h4>
+             <a>Available Quantity: 250</a>
             <p>₹400.00</p>
+             <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+            
     </div>
-    <div class="col-4">
-        <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-7.jpg">
+    <div class="col-4" data-id="p8">
+        <img src="images/product-7.jpg">
         <h4>HRX 3 Pair Socks</h4>
+         <a>Available Quantity: 250</a>
         <p>₹250.00</p>
+         <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+       
 </div>
-<div class="col-4">
-    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\exclusive.png">
+<div class="col-4" data-id="p9">
+    <img src="images/exclusive.png">
     <h4>MI Smart Band 4</h4>
+     <a>Available Quantity: 250</a>
     <p>₹1450.00</p>
+     <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+   
 </div>
-<div class="col-4">
-    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-9.jpg">
+<div class="col-4" data-id="p10">
+    <img src="images/product-9.jpg">
     <h4>Roadster Analog Watch</h4>
+     <a>Available Quantity: 250</a>
     <p>₹450.00</p>
+     <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+   
 </div>
-<div class="col-4">
-    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-10.jpg">
+<div class="col-4" data-id="p11">
+    <img src="images/product-10.jpg">
     <h4>HRX Red-Black Shoes</h4>
+     <a>Available Quantity: 250</a>
     <p>₹1350.00</p>
+     <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+   
 </div>
-<div class="col-4">
-    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-11.jpg">
+<div class="col-4" data-id="p12">
+    <img src="images/product-11.jpg">
     <h4>Roadster Gray Color Sketchers</h4>
+     <a>Available Quantity: 250</a>
     <p>₹850.00</p>
+     <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+   
 </div>
-<div class="col-4">
-    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\product-12.jpg">
+<div class="col-4" data-id="p13">
+    <img src="images/product-12.jpg">
     <h4>Puma black color TrackPant</h4>
+     <a>Available Quantity: 250</a>
     <p>₹650.00</p>
+     <div class="grid-btn-container">
+        
+        <a href="#" class="btn add-to-cart">Add To Cart</a>
+    </div> 
+    
 </div>
 </div>
 <div class="page-btn">
@@ -120,12 +196,12 @@
                 <h3>Download Our App</h3>
                 <p>Download App for Android and ios mobile phone.</p>
                 <div class="app-logo">
-                    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\play-store.png">
-                    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\app-store.png">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
                 </div>
             </div>
             <div class="footer-col-2">
-                <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\ASN_LOGO_no_background.png">
+                <img src="images/ASN_LOGO_no_background.png">
                 <p>Our Purpose Is To make Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
             </div>
             <div class="footer-col-3">
@@ -155,16 +231,14 @@
 <script>
     var MenuItems = document.getElementById("MenuItems");
     MenuItems.style.maxHeight = "0px";
-    function menutoggle(){
-        if( MenuItems.style.maxHeight == "0px");
-        {
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
             MenuItems.style.maxHeight = "200px";
-        }
-        else : 
-        {
+        } else {
             MenuItems.style.maxHeight = "0px";
         }
     }
 </script> 
+<script src="cart.js"></script>
 </body>
 </html>

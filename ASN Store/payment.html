@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - ASN Store</title>
+    <!-- Link to your main style.css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to the specific payment styles -->
+    <link rel="stylesheet" href="payment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar (Same as your other pages) -->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <!-- Ensure images folder is correct -->
+                <a href="ASN Store.html"><img src="images/ASN LOGO.png" width="125px" alt="Logo"></a>
+            </div>
+           <nav>
+    <ul id="MenuItems">
+        <li><a href="ASN Store.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="my-orders.html">My Orders</a></li> <!-- NEW LINE -->
+        <li><a href="account.html">Account</a></li>
+    </ul>
+</nav>
+            <a href="cart.html" style="position:relative; display:inline-block;">
+                <img src="images/cart.png" width="30px" height="30px" alt="Cart">
+                <span id="cart-count" style="position:absolute; top:-6px; right:-8px; background:#ff3b3b; color:#fff; font-size:12px; padding:2px 6px; border-radius:12px;">0</span>
+            </a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" alt="Menu">
+        </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="small-container payment-page">
+        <h2 class="title">Select Payment Method</h2>
+        
+        <div class="payment-container">
+            <!-- Order Summary (Optional) -->
+            <div class="order-summary">
+                <h3>Total Amount: ₹1250.00</h3>
+                <p>Includes all taxes</p>
+            </div>
+
+            <form id="paymentForm">
+                
+                <!-- Payment Option 1: Credit/Debit Card -->
+                <div class="payment-option">
+                    <input type="radio" name="payment-method" id="card" value="card" checked>
+                    <label for="card" class="option-label">
+                        <span><i class="fa fa-credit-card"></i> Credit / Debit Card</span>
+                    </label>
+                    <div class="payment-details" id="card-details">
+                        <input type="text" placeholder="Card Number" required>
+                        <div class="row-inputs">
+                            <input type="text" placeholder="MM/YY" required>
+                            <input type="text" placeholder="CVV" required>
+                        </div>
+                        <input type="text" placeholder="Card Holder Name" required>
+                    </div>
+                </div>
+
+                <!-- Payment Option 2: UPI -->
+                <div class="payment-option">
+                    <input type="radio" name="payment-method" id="upi" value="upi">
+                    <label for="upi" class="option-label">
+                        <span><i class="fa fa-mobile"></i> UPI / Wallets</span>
+                    </label>
+                    <div class="payment-details" id="upi-details">
+                        <input type="text" placeholder="Enter UPI ID (e.g. name@okhdfc)">
+                        <p class="note">Google Pay, PhonePe, Paytm</p>
+                    </div>
+                </div>
+
+                <!-- Payment Option 3: COD -->
+                <div class="payment-option">
+                    <input type="radio" name="payment-method" id="cod" value="cod">
+                    <label for="cod" class="option-label">
+                        <span><i class="fa fa-money-bill-wave"></i> Cash on Delivery</span>
+                    </label>
+                    <div class="payment-details" id="cod-details">
+                        <p class="note">Pay cash when the product is delivered to your doorstep.</p>
+                    </div>
+                </div>
+
+                <button type="button" class="btn pay-btn" onclick="processPayment()">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal (Hidden by default) -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="check-icon">✓</div>
+            <h2>Order Placed!</h2>
+            <p>Your payment was successful.</p>
+            <a href="ASN Store.html" class="btn">Continue Shopping</a>
+        </div>
+    </div>
+
+    <!-- Footer (Same as your other pages) -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="Play Store">
+                        <img src="images/app-store.png" alt="App Store">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/ASN_LOGO_no_background.png" alt="Logo">
+                    <p>Our Purpose Is To make Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="CopyRight">CopyRight 2020 - Easy Tutorials</p>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="payment.js"></script>
+    <script src="cart.js"></script>
+    <script>
+        // Menu toggle script from your original files
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+</html>

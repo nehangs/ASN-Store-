@@ -1,0 +1,152 @@
+/* --- Payment Page Specific Styles --- */
+
+.payment-page {
+    margin: 40px auto;
+}
+
+.payment-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.order-summary {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff523b;
+}
+
+.order-summary h3 {
+    margin: 0;
+    color: #333;
+}
+
+/* Payment Options Styling */
+.payment-option {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Hide actual radio button */
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.option-label {
+    display: block;
+    padding: 15px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    color: #555;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.option-label i {
+    margin-right: 10px;
+    color: #ff523b;
+    width: 20px;
+    text-align: center;
+}
+
+/* Selected State */
+.payment-option input[type="radio"]:checked + .option-label {
+    background: #ffe6e6; /* Light red background */
+    color: #ff523b;
+}
+
+/* Payment Details Form (Hidden by default) */
+.payment-details {
+    display: none;
+    padding: 15px;
+    background: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+/* Show details when radio is checked */
+.payment-option input[type="radio"]:checked ~ .payment-details {
+    display: block;
+}
+
+/* Input Fields */
+.payment-details input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.row-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.note {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+}
+
+.pay-btn {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- Success Modal Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.6); 
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    animation: popup 0.4s ease-out;
+}
+
+@keyframes popup {
+    from {transform: scale(0.5); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.check-icon {
+    width: 60px;
+    height: 60px;
+    background: #ff523b;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 50%;
+    line-height: 60px;
+    margin: 0 auto 20px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    color: #333;
+}

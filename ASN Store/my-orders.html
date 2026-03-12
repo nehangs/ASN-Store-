@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - ASN Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="my-orders.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="ASN Store.html"><img src="images/ASN LOGO.png" width="125px"></a>
+            </div>
+            <nav>
+    <ul id="MenuItems">
+        <li><a href="ASN Store.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="my-orders.html">My Orders</a></li> <!-- NEW LINE -->
+        <li><a href="account.html">Account</a></li>
+    </ul>
+</nav>
+            <a href="cart.html" style="position:relative; display:inline-block;">
+                <img src="images/cart.png" width="30px" height="30px">
+                <span id="cart-count" style="position:absolute; top:-6px; right:-8px; background:#ff3b3b; color:#fff; font-size:12px; padding:2px 6px; border-radius:12px;">0</span>
+            </a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-- My Orders List -->
+    <div class="small-container cart-page">
+        <h2 class="title" style="text-align: left; margin-bottom: 20px;">My Orders</h2>
+        
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="orders-list">
+                <!-- Javascript will put orders here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/ASN_LOGO_no_background.png">
+                    <p>Our Purpose Is To make Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="CopyRight">CopyRight 2020 - Easy Tutorials</p>
+        </div>
+    </div>
+
+    <script src="my-orders.js"></script>
+    <script src="cart.js"></script>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+</html>

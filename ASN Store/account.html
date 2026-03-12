@@ -2,28 +2,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>All Products - Redstore</title>
+        <title>Account Page</title>
         <link rel="stylesheet" href="style.css">
+        <script src="asn-store.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
         
     </head>
     <body>
     <div class="container">
-            <div class="navbar">
                 <div class="logo">
-                    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\ASN LOGO.png" width="125px">
+                    <a href="ASN Store.html"><img src="images/ASN LOGO.png" width="125px"></a>
                 </div>
-                <nav>
-                    <ul id="MenuItems">
-                        <li><a href="ASN Store.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="account.html">Account</a></li>
-                    </ul>
-                </nav>
-                <a href="cart.html"><img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\cart.png" width="30px" height="30px"></a>
-                <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
 
@@ -32,7 +22,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-2">
-                        <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\image1.png" width="100%">
+                        <img src="images/image1.png" width="100%">
                     </div>
                     <div class="col-2">
                       <div class="form-container">
@@ -42,20 +32,17 @@
                             <hr id="Indicator">
                         </div>
                         <form id="LoginForm">
-                            <input type="text" placeholder="username">
-                            <input type="password" placeholder="password">
-                            <button type="submit" class="btn">Login</button>
-                            <a href="">Forgot password</a>
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <a href="ASN Store.html" class="btn">Login</a>
                         </form>
 
                         <form id="RegForm">
-                            <input type="text" placeholder="username">
-                            <input type="email" placeholder="email">
-                            <input type="password" placeholder="password">
-                            <button type="submit" class="btn">Register</button>
+                            <input type="text" placeholder="Username">
+                            <input type="email" placeholder="Email - example@xyz.com">
+                            <input type="password" placeholder="Password - must be of 8 characters">
+                            <a href="ASN Store.html" class="btn">Register</a>
                         </form>
-
-
                       </div>
                     </div>
                 </div>
@@ -74,12 +61,12 @@
                 <h3>Download Our App</h3>
                 <p>Download App for Android and ios mobile phone.</p>
                 <div class="app-logo">
-                    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\play-store.png">
-                    <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\app-store.png">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
                 </div>
             </div>
             <div class="footer-col-2">
-                <img src="C:\Users\Nehang\Documents\web\RedStore_Img\images\ASN_LOGO_no_background.png">
+                <img src="images/ASN_LOGO_no_background.png">
                 <p>Our Purpose Is To make Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
             </div>
             <div class="footer-col-3">
@@ -109,21 +96,18 @@
 <script>
     var MenuItems = document.getElementById("MenuItems");
     MenuItems.style.maxHeight = "0px";
-    function menutoggle(){
-        if( MenuItems.style.maxHeight == "0px");
-        {
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
             MenuItems.style.maxHeight = "200px";
-        }
-        else
-        {
+        } else {
             MenuItems.style.maxHeight = "0px";
         }
     }
 </script> 
 <!--------js for toggle Form-------->
 <script>
-    var LoginForm = docment.getElementById("LoginForm");
-    var RegForm = docment.getElementById("RegForm");
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
     var Indicator = document.getElementById("Indicator");
         function register(){
             RegForm.style.transform = "translateX(0px)";
@@ -136,5 +120,6 @@
             Indicator.style.transform = "translateX(0px)";
         }
 </script>
+<script src="cart.js"></script>
 </body>
 </html>
